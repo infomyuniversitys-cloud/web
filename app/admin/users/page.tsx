@@ -41,7 +41,7 @@ export default function AdminUsersPage() {
     if (!supabase) return;
     const ok = window.confirm(`${current ? "Revoke" : "Approve"} KYC verification for this user?`);
     if (!ok) return;
-    const { error } = await supabase.from("users").update({ kyc_verified: !current }).eq("id", userId);
+    const { error } = await (supabase.from("users") as any).update({ kyc_verified: !current }).eq("id", userId);
     if (error) { setError(error.message); return; }
     await loadUsers();
   }
@@ -50,7 +50,7 @@ export default function AdminUsersPage() {
     if (!supabase) return;
     const ok = window.confirm(`${current ? "Revoke" : "Approve"} partner verification for this user?`);
     if (!ok) return;
-    const { error } = await supabase.from("users").update({ partner_verified: !current }).eq("id", userId);
+    const { error } = await (supabase.from("users") as any).update({ partner_verified: !current }).eq("id", userId);
     if (error) { setError(error.message); return; }
     await loadUsers();
   }
