@@ -218,9 +218,6 @@ export default function HomePage() {
             <a href="#" className="pub-btn pub-btn-primary pub-btn--lg">
               📱 Download for Android
             </a>
-            <a href="#" className="pub-btn pub-btn-outline pub-btn--lg">
-              🍎 Download for iOS
-            </a>
           </div>
         </div>
       </section>
